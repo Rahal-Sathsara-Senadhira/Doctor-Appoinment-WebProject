@@ -1,13 +1,11 @@
-@import "tailwindcss";
-
-:root{
-  font-size: 125%;
-}
-
-.bg-primary{
-  background-color: #5f6FFF;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .active hr{
-  display: block;
+    display: block;
+}
+
+::-webkit-scrollbar{
+    @apply hidden;
 }
