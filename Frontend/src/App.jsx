@@ -9,6 +9,7 @@ import Navbar from './components/Navbar'
 import Contact from './pages/Contact'
 import MyProfile from './pages/MyProfile'
 import About from './pages/About'
+import Footer from './components/Footer'
 
 function App() {
  
@@ -27,6 +28,7 @@ function App() {
         <Route path='/Doctors' element={<Doctor/>}/>
         <Route path='/Doctors/:speciality' element={<Doctor/>}/> 
       </Routes>
+      <Footer/>
     </div>
   )
 }
