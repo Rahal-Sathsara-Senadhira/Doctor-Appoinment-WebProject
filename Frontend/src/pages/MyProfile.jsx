@@ -35,24 +35,26 @@ const MyProfile = () => {
   };
 
   return (
-    <div className="max-w-lg flex flex-col gap-2 text-sm">
-      <img  src={userData.image} alt="" className="w-36 rounded"/>
+    <div className="max-w-lg flex flex-col gap-2 text-sm ">
+      <img src={userData.image} alt="" className="w-36 rounded" />
       {isEdit ? (
         <input
           type="text"
           name="name"
           value={userData.name}
           onChange={hadleChanged}
-          className="bg-gray-50 text-3xl font-medium max-w-60 mt-4"
+          className="bg-gray-50 text-3xl font-medium max-w-72 mt-4"
         />
       ) : (
-        <p>{userData.name}</p>
+        <p className="text-neutral-800 text-3xl font-medium mt-4">
+          {userData.name}
+        </p>
       )}
-      <hr />
+      <hr className="bg-zinc-400 h-[1px] border-none" />
       <div>
-        <p>CONTACT INFORMATION</p>
-        <div>
-          <p>Email :</p>
+        <p className="text-neutral-400 underline mt-3">CONTACT INFORMATION</p>
+        <div className="grid grid-cols-[1fr,3fr] gap-y-2.5 mt-3 text-neutral-700">
+          <p className="font-medium">Email :</p>
           {isEdit ? (
             <input
               type="text"
@@ -61,10 +63,10 @@ const MyProfile = () => {
               value={userData.email}
             />
           ) : (
-            <p>{userData.email}</p>
+            <p className="text-blue-500">{userData.email}</p>
           )}
 
-          <p>Phone :</p>
+          <p className="font-medium">Phone :</p>
           {isEdit ? (
             <input
               type="text"
@@ -73,10 +75,10 @@ const MyProfile = () => {
               value={userData.phone}
             />
           ) : (
-            <p>{userData.phone}</p>
+            <p className="text-blue-500">{userData.phone}</p>
           )}
 
-          <p>Address :</p>
+          <p className="font-medium">Address :</p>
           {isEdit ? (
             <p>
               <input
@@ -110,15 +112,16 @@ const MyProfile = () => {
         </div>
       </div>
       <div>
-        <p>BASIC INFORMATION</p>
-        <div>
-          <p>Gender :</p>
+        <p className="text-neutral-400 underline mt-3">BASIC INFORMATION</p>
+        <div className="grid grid-cols-[1fr,3fr] gap-y-2 mt-3 text-neutral-700">
+          <p className="font-medium">Gender :</p>
           {isEdit ? (
             <select
               name="gender"
               id=""
               value={userData.gender}
               onChange={hadleChanged}
+              className="max-w-52"
             >
               <option value="Male">Male</option>
               <option value="Female">Female</option>
@@ -126,29 +129,38 @@ const MyProfile = () => {
           ) : (
             <p>{userData.gender}</p>
           )}
-          <p>Date of Birth :</p>
+          <p className="font-medium">Date of Birth :</p>
           {isEdit ? (
-            <input type="date" name="dob" id="" value={userData.dob} onChange={hadleChanged}/>
+            <input
+              type="date"
+              name="dob"
+              id=""
+              value={userData.dob}
+              onChange={hadleChanged}
+              className="max-w-52"
+            />
           ) : (
             <p>{userData.dob}</p>
           )}
         </div>
       </div>
-      {isEdit ? (
-        <button
-          onClick={() => setIsEdit(false)}
-          className="border border-zinc-600 text-sm p-2 px-4 rounded-full"
-        >
-          Save Information
-        </button>
-      ) : (
-        <button
-          onClick={() => setIsEdit(true)}
-          className="border border-zinc-600 text-sm p-2 px-4 rounded-full"
-        >
-          Edit
-        </button>
-      )}
+      <div className="mt-10">
+        {isEdit ? (
+          <button
+            onClick={() => setIsEdit(false)}
+            className="border border-primary text-sm p-2 px-4 rounded-full m-auto"
+          >
+            Save Information
+          </button>
+        ) : (
+          <button
+            onClick={() => setIsEdit(true)}
+            className="border border-primary text-sm p-2 px-4 rounded-full"
+          >
+            Edit
+          </button>
+        )}
+      </div>
     </div>
   );
 };
