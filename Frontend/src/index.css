@@ -13,6 +13,10 @@
     display: block;
 }
 
+.active p{
+    @apply text-white bg-primary
+}
+
 ::-webkit-scrollbar{
     @apply hidden;
 }

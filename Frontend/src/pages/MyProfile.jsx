@@ -103,11 +103,11 @@ const MyProfile = () => {
               />
             </p>
           ) : (
-            <p>
+            <div>
               <p>{userData.address.line1},</p>
               <p>{userData.address.line2},</p>
               <p>{userData.address.line3}</p>
-            </p>
+            </div>
           )}
         </div>
       </div>
