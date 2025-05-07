@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 
 const Doctors = () => {
@@ -16,6 +16,13 @@ const Doctors = () => {
       setFilterDoc(doctors);
     }
   };
+
+  useEffect(()=>{
+    if (!showFilters) {
+      setFilterDoc(doctors)
+      navigate('/doctors')
+    }
+  },[showFilters,doctors,filterDoc])
 
   useEffect(() => {
     applyFilter();

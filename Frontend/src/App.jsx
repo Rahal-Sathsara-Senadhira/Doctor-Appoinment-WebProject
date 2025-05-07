@@ -26,7 +26,8 @@ function App() {
         <Route path='/MyAppoinments' element={<MyAppoinments/>}/>
         <Route path='/appoinment/:docId' element={<Appoinment/>}/>
         <Route path='/Doctors' element={<Doctor/>}/>
-        <Route path='/Doctors/:speciality' element={<Doctor/>}/> 
+        <Route path='/Doctors/:speciality' element={<Doctor/>}/>
+
       </Routes>
       <Footer/>
     </div>
